@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,800&family=Montserrat&display=swap');
+
+.wrapper {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: rgb(242, 235, 227);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.box {
+  position: relative;
+  display: grid;
+  grid-template-columns: 300px 400px;
+  top: 160px;
+  height: 400px;
+  width: 700px;
+  border-radius: 20px;
+  overflow-y: hidden;
+}
+.text {
+  background-color: white;
+  padding: 3px 25px;
+}
+.Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:  rgb(255, 255, 255);
+    background-color: rgb(60,128,103);
+    height: 60px;
+    width: 350px;
+    margin-top: 30px;
+    border-color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+#Mug {
+  height: 400px;
+  width: 320px;
+}
+#Ist-Heading {
+  color: rgb(108, 114, 137);
+  text-transform: uppercase;
+  word-spacing: 7px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 5px;
+}
+
+#IInd-Heading {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 32px;
+  font-family: "Fraunces", serif;
+}
+#brief{
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(108, 114, 137);
+    font-family: "Montserrat", sans-serif;
+}
+#Ist-Price{
+    display: inline;
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight:700;
+    line-height: 32px;
+    color: rgb(60, 128, 103); 
+}
+#IInd-Price{
+    display: inline;
+    padding-left: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    color:rgb(108, 114, 137);
+}
+#cart{
+    height: 20px;
+    margin-right: 10px;
+}
+#button-text{
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color:rgb(255, 255, 255);
+}
+.Button:hover{
+    cursor: pointer;
+}
