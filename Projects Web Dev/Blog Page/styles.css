@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper{
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.container{
+    margin: 2% 15% 2% 15%;
+    position: relative;
+}
+.header{
+    padding: 1rem 0.5rem 0 0.5rem;
+}
+
+.Subscribe{
+    color: rgb(143, 141, 141);
+    text-decoration: underline;
+    position: absolute;
+    margin-top: 0.5rem;
+    font-size: larger;
+    font-weight: 800;
+}
+
+.search-icon{
+    position:relative;
+    bottom: 2rem;
+    left: 96%;
+    height: 2rem;
+    width: 2rem;
+}
+.Title{
+    position: relative;
+    left: 44%;
+    text-decoration: underline;
+}
+.content{
+    display: grid;
+    width: 100%;
+    grid-template-columns:repeat(2,1fr);
+    grid-template-rows:repeat(3,1fr);
+    align-items: center;
+    grid-gap: 1.5rem;
+}
+
+.left-cards{
+    padding: 0 1.5rem;
+    height: 15rem;
+    position: relative;
+    font-size: 1em;
+    box-shadow: 0 0 5px 2px rgb(216, 210, 210);
+}
+.left-cards h3{
+    color: rgb(53, 93, 239);
+    line-height: 2rem;
+    
+}
+.left-cards em{
+    color: grey;
+}
+.left-cards p{
+    line-height: 1rem;
+    margin-top: 1rem;
+}
+.left-cards a{
+    position: relative;
+    top:5.2rem;
+}
+
+.right-cards{
+    padding: 0 1.5rem;
+    height: 15rem;
+    position: relative;
+    font-size: 1em;
+    box-shadow: 0 0 5px 2px rgb(216, 210, 210);
+}
+.right-cards h3{
+    color: rgb(54, 180, 8);
+    line-height: 2rem;
+    
+}
+.right-cards em{
+    color: grey;
+}
+.right-cards p{
+    line-height: 1rem;
+    margin-top: 1rem;
+}
+.right-cards a{
+    position: relative;
+    top:3.8rem;
+}
+
