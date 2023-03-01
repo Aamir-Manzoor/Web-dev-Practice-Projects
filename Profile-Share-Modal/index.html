@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Share Modal </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- circles -->
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+    <!-- page1 -->
+    <div class="#wrapper">
+        <div class="main">
+            <!-- content -->
+            <div class="img-div">
+                <img src="./images/WhatsApp Image 2022-05-29 at 3.37.00 PM.jpeg" alt=""
+                height="200px"
+                width="200px">
+            </div>
+            <h1 class="Ist-heading">Amir Manzoor</h1>
+            <h2 class="second-heading">Full Stack Developer</h2>
+            <!-- buttons -->
+            <div class="Btn">
+                <button onclick="openModal" class="share-btn">
+                    <i class="fa-solid fa-share"></i>
+                    Share My Profile
+                </button>
+                <button class="follow-btn">Follow Me</button>
+            </div>
+        </div>
+    </div>
+    <!-- modal page -->
+    <div class="modal">
+        <div class="Header">
+            <h1 class="h-1">Share My Profile</h1>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <h3>Share this via</h3>
+        <div class="icons">
+            <a href="#">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="#">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Overlay -->
+    <div onclick="closeModal" class=""></div>
+
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
