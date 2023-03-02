@@ -26,7 +26,7 @@
             <h2 class="second-heading">Full Stack Developer</h2>
             <!-- buttons -->
             <div class="Btn">
-                <button onclick="openModal" class="share-btn">
+                <button onclick="openModal()" class="share-btn">
                     <i class="fa-solid fa-share"></i>
                     Share My Profile
                 </button>
@@ -36,31 +36,42 @@
     </div>
     <!-- modal page -->
     <div class="modal">
-        <div class="Header">
-            <h1 class="h-1">Share My Profile</h1>
-            <i class="fa-solid fa-xmark"></i>
+        <div class="modal-header">
+          <h1>Share My Profile</h1>
+          <div>
+            <i onclick="closeModal()" class="fa-solid fa-xmark close"></i>
+          </div>
         </div>
-        <h3>Share this via</h3>
-        <div class="icons">
-            <a href="#">
-                <i class="fa-brands fa-facebook"></i>
+    
+    
+        <div>
+    
+          <h3>Share this via</h3>
+    
+          
+          <div class="icon-container">
+            <a href="#" class="icon" id="facebook">
+              <i class="fa-brands fa-facebook-f"></i>
             </a>
-            <a href="#">
-                <i class="fa-brands fa-twitter"></i>
+            <a href="#" class="icon" id="twitter">
+              <i class="fa-brands fa-twitter"></i>
             </a>
-            <a href="#">
-                <i class="fa-brands fa-instagram"></i>
+            <a href="#" class="icon" id="instagram">
+              <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="#">
-                <i class="fa-brands fa-whatsapp"></i>
+            <a href="#" class="icon" id="whatsapp">
+              <i class="fa-brands fa-whatsapp"></i>
             </a>
-            <a href="#">
-                <i class="fa-brands fa-telegram"></i>
+            <a href="#" class="icon" id="telegram">
+              <i class="fa-brands fa-telegram"></i>
             </a>
+          </div>
         </div>
-    </div>
+    
+    
+      </div>
     <!-- Overlay -->
-    <div onclick="closeModal" class=""></div>
+    <div class="overlay" onclick="closeModal()"></div>
 
     <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
