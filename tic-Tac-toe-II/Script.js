@@ -1,107 +1,106 @@
-let btnRef = document.querySelectorAll(".button-option");
-let popupRef = document.querySelector(".popup");
-let newgamebtn = document.getElementById("new-game");
-let restartBtn = document.getElementById("restart");
-let msgRef = document.getElementById("message");
-//Winning Pattern Array
-let winningPattern = [
+const boxes = document.querySelectorAll(".box");
+const gameInfo = document.querySelector(".player-info");
+const newGameBtn = document.querySelector(".btn");
+
+let currentPlayer;
+let gameGrid;
+
+const winningPositions = [
   [0, 1, 2],
-  [0, 3, 6],
-  [2, 5, 8],
-  [6, 7, 8],
   [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
   [1, 4, 7],
+  [2, 5, 8],
   [0, 4, 8],
   [2, 4, 6],
 ];
-let xTurn = true;
-let count = 0;
 
-// Disable All Buttons
-const disableButtons = () => {
-  btnRef.forEach((element) => (element.disabled = true));
-  // enable popup
-  popupRef.classList.remove("hide");
-};
+function initGame() {
+  currentPlayer = "X";
+  gameGrid = ["", "", "", "", "", "", "", "", ""];
 
-// Enable Alll Buttons for (New Game and Restart)
-const enableButtons = () => {
-  btnRef.forEach((element) => {
-    element.innerText = "";
-    element.disabled = false;
+  boxes.forEach((box, index) => {
+    box.innerText = "";
+    boxes[index].style.pointerEvents = "all";
+
+    box.classList = `box box${index + 1}`;
   });
-  //disable Popup
-  popupRef.classList.add("hide");
-};
-// This function is Executed when a player wins
-const winFunction = (letter) => {
-  disableButtons();
-  if (letter == "X") {
-    msgRef.innerHTML = "&#x1F389; <br> 'X' Wins";
+  newGameBtn.classList.remove("active");
+  gameInfo.innerText = `Current Player - ${currentPlayer}`;
+}
+
+initGame();
+
+function swapTurn() {
+  if (currentPlayer === "X") {
+    currentPlayer = "O";
   } else {
-    msgRef.innerHTML = "&#x1F389; <br> 'O' Wins";
+    currentPlayer = "X";
   }
-};
-//  Function for draw
-const drawFunction = () => {
-  disableButtons();
-  msgRef.innerHTML = "&#x1F60F; <br> 'O' It's a Draw";
-};
+  //UI Update
+  gameInfo.innerText = `Current Player - ${currentPlayer}`;
+}
 
-// New Game
-newgamebtn.addEventListener("click", () => {
-  count = 0;
-  enableButtons();
-});
-restartBtn.addEventListener("click", () => {
-  count = 0;
-  enableButtons();
-});
+function checkGameOver() {
+  let answer = "";
 
-//WinLogic
-const winChecker = () => {
-  // Loop through all win Patterns
-  for (let i of winningPattern) {
-    let [element1, element2, element3] = [
-      btnRef[i[0]].innerText,
-      btnRef[i[1]].innerText,
-      btnRef[i[2]].innerText,
-    ];
-    // Check if elements are filled
-    // If 3 Empty elements are same and would give win as would
-    if (element1 != "" && (element2 != "") & (element3 != "")) {
-      if (element1 == element2 && element2 == element3) {
-        // If all 3 buttons have same values then pass the value to win Function
-        winFunction(element1);
+  winningPositions.forEach((position) => {
+    if (
+      (gameGrid[position[0]] !== "" ||
+        gameGrid[position[1]] !== "" ||
+        gameGrid[position[2]] !== "") &&
+      gameGrid[position[0]] === gameGrid[position[1]] &&
+      gameGrid[position[1]] === gameGrid[position[2]]
+    ) {
+      if (gameGrid[position[0]] === "X") answer = "X";
+      else {
+        answer = "O";
       }
+
+      boxes.forEach((box) => {
+        box.style.pointerEvents = "none";
+      });
+
+      boxes[position[0]].classList.add("win");
+      boxes[position[1]].classList.add("win");
+      boxes[position[2]].classList.add("win");
     }
+  });
+
+  if (answer !== "") {
+    gameInfo.innerText = `Winner Player - ${answer}`;
+    newGameBtn.classList.add("active");
+    return;
   }
-};
 
-// Display X/O on click
+  let fillCount = 0;
+  gameGrid.forEach((box) => {
+    if (box !== "") fillCount++;
+  });
 
-btnRef.forEach((element) => {
-  element.addEventListener("click", () => {
-    if (xTurn) {
-      xTurn = false;
-      // Display x
-      element.innerText = "X";
-      element.disabled = "true";
-    } else {
-      xTurn = true;
-      // Display Y
-      element.innerText = "O";
-      element.disabled = "true";
-    }
-    //Increment count on Each click
-    count += 1;
-    if (count == 9) {
-      //Ts's a drew Since there are total of 9 boxed
-      drawFunction();
-    }
-    // Check for Win on every click
-    winChecker();
+  if (fillCount === 9) {
+    gameInfo.innerText = "Game Tied !";
+    newGameBtn.classList.add("active");
+  }
+}
+
+function handleClick(index) {
+  if (gameGrid[index] === "") {
+    boxes[index].innerText = currentPlayer;
+    gameGrid[index] = currentPlayer;
+    boxes[index].style.pointerEvents = "none";
+
+    swapTurn();
+
+    checkGameOver();
+  }
+}
+
+boxes.forEach((box, index) => {
+  box.addEventListener("click", () => {
+    handleClick(index);
   });
 });
-//  Enable buttons and disable popup on page
-window.onload = enableButtons;
+
+newGameBtn.addEventListener("click", initGame);
