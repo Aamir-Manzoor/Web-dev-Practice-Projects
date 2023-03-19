@@ -9,7 +9,7 @@ YOU CAN SEE ALL THE PROJECTS THROUGH THESE LINKS:-
 NOTE:- Some of them are not very Responsive-
 <br>
 Moder-Chair:- https://calm-croissant-c85c93.netlify.app/ <br>
-Tic Tac Toe :- https://famous-gumption-5cfd73.netlify.app/   <br>
+Tic Tac Toe :- https://flourishing-axolotl-e73288.netlify.app/   <br>
 Parallax Website :- https://incandescent-cendol-13d6c8.netlify.app/    <br>
 Product Card :- https://ubiquitous-treacle-97a145.netlify.app/   <br>
 Image Gallery :- https://bespoke-mousse-7a5f01.netlify.app/    <br>
